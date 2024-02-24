@@ -11,6 +11,7 @@ ha_codeowners:
   - '@frenck'
 ha_domain: moon
 ha_platforms:
+  - calendar
   - sensor
 ha_config_flow: true
 ha_integration_type: service
@@ -19,6 +20,8 @@ ha_integration_type: service
 The Moon integration tracks the phases of the moon.
 
 {% include integrations/config_flow.md %}
+
+The integration will create two entities: a sensor and a calendar.
 
 The sensor provided by this integration will return one of the following values:
 
