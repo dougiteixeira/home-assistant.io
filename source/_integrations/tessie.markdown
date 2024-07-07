@@ -4,6 +4,7 @@ description: Instructions on how to integrate Tessie within Home Assistant.
 ha_category:
   - Binary Sensor
   - Button
+  - Car
   - Climate
   - Cover
   - Device Tracker
@@ -38,7 +39,7 @@ The Tessie integration exposes various commands and sensors from the Tesla vehic
 
 ## Prerequisites
 
-You must have a [Tessie](https://my.tessie.com/) account and [access token](https://my.tessie.com/settings/api).
+You must have a [Tessie](https://my.tessie.com/) account, generate a [Tessie Access Token](https://my.tessie.com/settings/api) and grant Tessie access to your Tesla vehicle by generating a [Tesla Virtual Key](https://www.tesla.com/_ak/tessie.com).
 
 {% include integrations/config_flow.md %}
 
@@ -151,8 +152,11 @@ The integration will create sensor entities for a variety of metrics related to 
 
 #### Charge state
 
+- Battery charging
 - Battery level
 - Battery range
+- Battery range estimate (disabled)
+- Battery range ideal (disabled)
 - Charge energy added
 - Charge rate
 - Charger current

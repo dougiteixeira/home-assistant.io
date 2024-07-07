@@ -13,6 +13,7 @@ ha_codeowners:
 ha_platforms:
   - binary_sensor
   - sensor
+  - switch
 ha_integration_type: device
 ---
 
@@ -44,3 +45,11 @@ The {% term integration %} adds the following sensors:
 - Wi-Fi signal strength
 - Wi-Fi network name
 - Status
+
+## Switch
+
+The {% term integration %} adds the following switch:
+
+| Name             | Description                                                                                                                                                                                                                                              |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Auto-charge mode | When enabled, vehicles will start charging automatically when plugged in. When turned off, charging will need to be manually started each time a vehicle is plugged in. Note: Disabling auto-charge mode does not interrupt an ongoing charging session. |

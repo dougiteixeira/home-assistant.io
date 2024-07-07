@@ -1,13 +1,27 @@
 ---
 title: "Creating an automation blueprint"
 description: "Tutorial on creating an automation blueprint."
+related:
+  - docs: /docs/configuration/
+    title: "Editing the configuration file"
+  - docs: /docs/configuration/yaml/
+  - docs: /docs/automation/yaml/
+    title: "YAML used in automations"
+  - docs: /docs/scripts/
+    title: Scripts
+  - docs: /docs/blueprint/selectors/
+    title: Blueprint selectors
+  - docs: /docs/blueprint/schema/
+    title: Blueprint schema
+  - docs: /docs/blueprint/
+    title: About blueprints
+  - docs: /docs/automation/using_blueprints/
+    title: Using automation blueprints
 ---
 
-<div class='note'>
-
+{% tip %}
 While the tutorial only shows how to create an automation blueprint, {% term scripts %} also support blueprints in the same way.
-
-</div>
+{% endtip %}
 
 ## Creating an automation blueprint
 
@@ -121,7 +135,7 @@ For more information on blueprint inputs, refer to the documentation of the [blu
 
 With the bare minimum metadata added, your blueprint is ready to use.
 
-Open your `configuration.yaml` and add the following:
+Open your {% term "`configuration.yaml`" %} and add the following:
 
 ```yaml
 automation tutorial:
@@ -186,8 +200,7 @@ blueprint:
       selector:
         target:
           entity:
-            filter:
-              - domain: light
+            - domain: light
 ```
 
 By limiting our blueprint to working with lights and motion sensors, we unlock a couple of benefits: the UI will be able to limit suggested values to lights and motion sensors instead of all devices. It will also allow the user to pick an area to control the lights in.
@@ -218,8 +231,7 @@ blueprint:
       selector:
         target:
           entity:
-            filter:
-              - domain: light
+            - domain: light
 
 trigger:
   - platform: state
@@ -242,9 +254,9 @@ action:
 1. To configure your blueprint via the UI, go to {% my blueprints title="**Settings** > **Automations & Scenes** > **Blueprints**" %}.
 2. Find the **Motion Light Tutorial** blueprint and select **Create Automation**.
 
-<div class='note'>
+{% important %}
 Don't forget to reload automations after you make changes to your blueprint to have the UI and the automation integration pick up the latest blueprint changes.
-</div>
+{% endimportant %}
 
 ![Screenshot of the blueprint UI](/images/blueprints/tutorial-ui.png)
 
@@ -273,17 +285,3 @@ For this tutorial, we're going to share it on GitHub Gists. This is a good optio
 ### Share on the Blueprint Exchange
 
 If you follow the [Rules and format for posting](/get-blueprints), you can share your blueprint on the Home Assistant Blueprint Exchange forum. This option is accessible to the general Home Assistant community but recommended only for your original blueprints. Please don't post this tutorial to the Blueprint Exchange, but instead, remember this as an option for releasing your real blueprints.
-
-## Related topics
-
-**Prerequisites**
-- [Editing the configuration file](/docs/configuration/)
-- [YAML](/docs/configuration/yaml/), and specifically, [YAML used in automations](/docs/automation/yaml/)
-- [Scripts](/docs/scripts/)
-
-**Blueprints**
-
-- [Blueprint selectors](/docs/blueprint/selectors/)
-- [Blueprint schema](/docs/blueprint/schema/)
-- [About blueprints](/docs/blueprint/)
-- [Using automation blueprints](/docs/automation/using_blueprints/)

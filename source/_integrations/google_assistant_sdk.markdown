@@ -2,6 +2,7 @@
 title: Google Assistant SDK
 description: Instructions on how to use Google Assistant SDK in Home Assistant.
 ha_category:
+  - Notifications
   - Voice
 ha_iot_class: Cloud Polling
 ha_release: 2023.1
@@ -11,6 +12,7 @@ ha_codeowners:
   - '@tronikos'
 ha_integration_type: service
 ha_platforms:
+  - diagnostics
   - notify
 ha_quality_scale: platinum
 google_dev_console_link: https://console.developers.google.com/apis/api/embeddedassistant.googleapis.com/overview
