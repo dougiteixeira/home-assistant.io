@@ -4,7 +4,8 @@ description: Instructions on how to integrate calendars within Home Assistant.
 ha_release: 0.33
 ha_domain: calendar
 ha_quality_scale: internal
-ha_category: []
+ha_category:
+  - Calendar
 ha_codeowners:
   - '@home-assistant/core'
 ha_integration_type: entity
@@ -16,13 +17,10 @@ dashboard and can be used with automations.
 
 This page does not provide instructions on how to create calendar
 entities. Please see the ["Calendar" category](/integrations/#calendar) on the
-integrations page to find integration offering calendar entities.
+integrations page to find integrations offering calendar entities. For example, [Local Calendar](/integrations/local_calendar/) is a fully local integration to create calendars and events within your Home Assistant instance or other integrations work with other services providing calendar data.
 
 {% include integrations/building_block_integration.md %}
 
-A calendar {% term entity %} has a {% term state %} and attributes representing the next event (only).
-A calendar {% term trigger %} is much more flexible, has fewer limitations, and is
-recommended for automations instead of using the entity state.
 
 ## Viewing and managing calendars
 
@@ -42,6 +40,9 @@ Calendar [Triggers](/docs/automation/trigger) enable {% term automation %} based
 event's start or end. Review the [Automating Home Assistant](/getting-started/automation/)
 getting started guide on automations or the [Automation](/docs/automation/)
 documentation for full details.
+
+Calendar {% term triggers %} are the best way to automate based on calendar events.
+A calendar {% term entity %} can also be used to automate based on its state, but these are limited and attributes only represent the next event.
 
 {% my automations badge %}
 
@@ -159,11 +160,9 @@ Add a new calendar event. A calendar `target` is selected with a [Target Selecto
 | `location` | yes | The location of the event. | Bowling center
 
 
-<div class='note'>
-
+{% note %}
 You either use `start_date_time` and `end_date_time`, or `start_date` and `end_date`, or `in`.
-
-</div>
+{% endnote %}
 
 This is a full example of a {% term service %} call in YAML:
 
@@ -203,11 +202,9 @@ with calendar events within a date range. It can return events from multiple cal
 | `end_date_time` | yes | Return active events before this time (exclusive). Cannot be used with `duration`. You must specify either `end_date_time` or `duration`.| 2019-03-10 23:00:00
 | `duration` | yes | Return active events from `start_date_time` until the specified duration. Cannot be used with `end_date_time`. You must specify either `duration` or `end_date_time`. | `days: 2`
 
-<div class='note'>
-
+{% note %}
 Use only one of `end_date_time` or `duration`.
-
-</div>
+{% endnote %}
 
 ```yaml
 service: calendar.get_events
