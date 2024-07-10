@@ -73,7 +73,8 @@ If you need more specific features for your use case, the manual YAML-configurat
 
 This section will present some general information that may apply to different platforms. To apply them, consult the platform's specific documentation.
 
-#### Video tutorial
+### Video tutorial
+
 This video tutorial explains how to set up a Trigger based template that makes use of an action to retrieve the weather forecast (precipitation).
 
 <lite-youtube videoid="zrWqDjaRBf0" videotitle="How to create Action Template Sensors in Home Assistant" posterquality="maxresdefault"></lite-youtube>
